@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #F4F1EA;
+    color: #2B2B2B;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #B08B57;
+    color: #FFFFFF;
+  }
+
+  /* Smooth custom scrollbar for luxury feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F4F1EA;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D4CDBC;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B08B57;
+  }
+}
+
+@layer utilities {
+  .font-editorial {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Soft organic shadow with zero harshness */
+  .shadow-luxury {
+    box-shadow: 0 20px 50px -10px rgba(43, 43, 43, 0.06), 0 4px 12px -2px rgba(43, 43, 43, 0.03);
+  }
+
+  .shadow-luxury-hover {
+    box-shadow: 0 30px 70px -12px rgba(43, 43, 43, 0.11), 0 8px 24px -4px rgba(43, 43, 43, 0.05);
+  }
+
+  /* Smooth image scale on hover */
+  .hover-scale-img {
+    @apply transition-transform duration-700 ease-out hover:scale-105;
+  }
+}
