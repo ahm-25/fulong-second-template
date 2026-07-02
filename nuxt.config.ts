@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'أتيليه سيناء — أحجار معمارية وجرانيت مصري فاخر',
+      title: 'Fulong',
       htmlAttrs: {
         dir: 'rtl',
         lang: 'ar'
