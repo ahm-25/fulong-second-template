@@ -5,32 +5,36 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #F4F1EA;
-    color: #2B2B2B;
+    background-color: #F8FAFC;
+    color: #0F172A;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html[dir="rtl"] {
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  }
+
   ::selection {
-    background-color: #B08B57;
+    background-color: #1E3A8A;
     color: #FFFFFF;
   }
 
-  /* Smooth custom scrollbar for luxury feel */
+  /* Smooth custom scrollbar for clean corporate feel */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #F4F1EA;
+    background: #F8FAFC;
   }
   ::-webkit-scrollbar-thumb {
-    background: #D4CDBC;
+    background: #CBD5E1;
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #B08B57;
+    background: #3B82F6;
   }
 }
 
@@ -39,17 +43,21 @@
     font-family: 'Cormorant Garamond', serif;
   }
 
+  [dir="rtl"] .font-editorial {
+    font-family: 'Noto Naskh Arabic', serif;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Soft organic shadow with zero harshness */
+  /* Soft corporate shadow with clean minimal feel */
   .shadow-luxury {
-    box-shadow: 0 20px 50px -10px rgba(43, 43, 43, 0.06), 0 4px 12px -2px rgba(43, 43, 43, 0.03);
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.02);
   }
 
   .shadow-luxury-hover {
-    box-shadow: 0 30px 70px -12px rgba(43, 43, 43, 0.11), 0 8px 24px -4px rgba(43, 43, 43, 0.05);
+    box-shadow: 0 20px 40px -8px rgba(15, 23, 42, 0.1), 0 8px 20px -4px rgba(15, 23, 42, 0.04);
   }
 
   /* Smooth image scale on hover */

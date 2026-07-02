@@ -11,69 +11,81 @@ const selectedProduct = ref<any | null>(null)
 const products = [
   {
     id: 'sinai-pearl-royal',
-    name: 'Sinai Pearl Royal Limestone',
-    origin: 'Mount Sinai Quarry, South Sinai',
+    name: 'كتل وألواح حجر لؤلؤة سيناء',
+    category: 'كتل رخام وألواح خام',
+    country: 'مصر',
+    origin: 'محجر جبل سيناء المملوك، جنوب سيناء',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000',
-    finishes: ['Honed Velvet', 'Antique Leathered', '3D Linear Fluted', 'Bush-Hammered'],
-    absorption: '0.18%',
-    density: '2,680 kg/m³',
-    strength: '135 MPa',
-    desc: 'The quintessential dolomitic architectural limestone. Celebrated for its warm beige-grey crystallization and subtle fossilized flora.'
+    finishes: ['كتل خام (Blocks)', 'ألواح طاولات Slabs', 'بلاط مخصص Tiles', 'مبشرد (Bush-Hammered)'],
+    absorption: '٠.١٨٪',
+    density: '٢,٦٨٠ كجم/م³',
+    strength: '١٣٥ ميجا باسكال',
+    desc: 'كتل صخرية خام تزن حتى ٣٠ طناً وألواح مقصوصة بسماكات مخصصة (٢٠-٥٠ ملم) من الرخام الجيري الدولوميتي. توريد مباشر للمشاريع القومية والمطارات.'
   },
   {
     id: 'galala-classic-beige',
-    name: 'Galala Classic Beige Marble',
-    origin: 'Suez Eastern Desert Range',
+    name: 'كتل وألواح رخام الجلالة الكلاسيكي',
+    category: 'ألواح طاولات ومربعات',
+    country: 'مصر',
+    origin: 'محاجر جبال الجلالة، السويس',
     image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=1000',
-    finishes: ['Mirror Polished', 'Honed Monolith', 'Acid-Washed', 'Split-Face'],
-    absorption: '0.12%',
-    density: '2,710 kg/m³',
-    strength: '142 MPa',
-    desc: 'A world-renowned creamy warm limestone featuring delicate golden veining and exceptional structural density for minimalist luxury villas.'
+    finishes: ['مصقول مرآتي Polished', 'مخملي Honed', 'قص هندسي CNC', 'حجر وش جبل'],
+    absorption: '٠.١٢٪',
+    density: '٢,٧١٠ كجم/م³',
+    strength: '١٤٢ ميجا باسكال',
+    desc: 'استخراج مباشر لكتل رخام الجلالة الكريمي ذي الكثافة الهيكلية الفائقة، وتجهيز ألواح طاولات وبلاط مخصص وآمن للشحن اللوجستي في الحاويات.'
   },
   {
     id: 'nero-aswan-obsidian',
-    name: 'Nero Aswan Obsidian Granite',
-    origin: 'Aswan Monumental Quarries',
+    name: 'كتل جرانيت أسوان الأسود البركاني',
+    category: 'كتل جرانيت رصف ضخمة',
+    country: 'مصر',
+    origin: 'محاجر الجرانيت التاريخية بأسوان',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1000',
-    finishes: ['Flamed & Brushed', 'Mirror Polished', 'Leathered Monolith'],
-    absorption: '0.04%',
-    density: '2,890 kg/m³',
-    strength: '190 MPa',
-    desc: 'Deep volcanic obsidian granite interspersed with crystalline silver and rose quartz flecks. Engineered for monumental architectural durability.'
+    finishes: ['كتل رصف ضخمة', 'موشى بالهب ومفرش', 'مصقول مرآتي', 'جلدي عتيق'],
+    absorption: '٠.٠٤٪',
+    density: '٢,٨٩٠ كجم/م³',
+    strength: '١٩٠ ميجا باسكال',
+    desc: 'كتل جرانيت خام وألواح رصف ضخمة مصممة هندسياً لمشاريع البنية التحتية، والميادين العامة، والواجهات الخارجية للمباني الحكومية والفنادق.'
   },
   {
     id: 'sahara-noir-gold',
-    name: 'Sahara Noir Gold Vein Marble',
-    origin: 'Eastern Desert Red Sea Range',
+    name: 'ألواح رخام صحارى نوار الفاخر',
+    category: 'ألواح واجهات للتصدير',
+    country: 'مصر',
+    origin: 'محاجر جبال البحر الأحمر، الصحراء الشرقية',
     image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=1000',
-    finishes: ['5-Axis Waterjet Fluted', 'Honed Monolith', 'Book-Matched Polished'],
-    absorption: '0.08%',
-    density: '2,850 kg/m³',
-    strength: '165 MPa',
-    desc: 'Dramatic obsidian black marble intersected by razor-sharp white and desert gold veins. Hand-selected for luxury statement walls.'
+    finishes: ['نحت مضلع بنفث الماء', 'مخملي مصقول', 'ألواح متناظرة Book-Match'],
+    absorption: '٠.٠٨٪',
+    density: '٢,٨٥٠ كجم/م³',
+    strength: '١٦٥ ميجا باسكال',
+    desc: 'أحجار وألواح فاخرة مجهزة بكميات تجارية ومختارة بعناية لتلبية مواصفات كبرى شركات المقاولات العالمية في تصميم الواجهات والصالات الكبرى.'
   },
   {
     id: 'sunny-gold-royal',
-    name: 'Sunny Gold Royal Marble',
-    origin: 'Minya Central Egyptian Quarries',
+    name: 'كتل وألواح صني جولد الملكي',
+    category: 'كتل وألواح وحلول قطع',
+    country: 'مصر',
+    origin: 'محاجر المنيا الدافئة، وسط مصر',
     image: 'https://images.unsplash.com/photo-1598880940371-c756e071fa1a?auto=format&fit=crop&q=80&w=1000',
-    finishes: ['Honed Velvet', 'Polished Mirror', 'Tumbled Antique'],
-    absorption: '0.21%',
-    density: '2,650 kg/m³',
-    strength: '128 MPa',
-    desc: 'Sun-drenched golden Egyptian marble featuring sweeping cloud-like veining. Radiating the warmth and timeless light of the desert.'
+    finishes: ['كتل خام Blocks', 'ألواح طاولات', 'بلاط قياسي Tiles', 'معتق عتيق'],
+    absorption: '٠.٢١٪',
+    density: '٢,٦٥٠ كجم/م³',
+    strength: '١٢٨ ميجا باسكال',
+    desc: 'توريد كتل خام وتفصيل ألواح وبلاط بمقاسات مخصصة لحاويات التصدير، مع ضمان تجانس العروق والألوان للطلبيات التجارية الكبيرة.'
   },
   {
     id: 'triesta-grigio-alabaster',
-    name: 'Triesta Grigio Alabaster',
-    origin: 'Eastern Desert Range',
+    name: 'ألواح تريستا غريجيو وحلول القطع',
+    category: 'حلول القطع المخصص (CNC)',
+    country: 'مصر',
+    origin: 'محترف التحكم الرقمي بالسويس',
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1000',
-    finishes: ['Honed Velvet', 'Brushed Antique', 'Sandblasted'],
-    absorption: '0.15%',
-    density: '2,740 kg/m³',
-    strength: '148 MPa',
-    desc: 'An earthy bronze-grey architectural stone with organic layered sediment lines. Brings a wabi-sabi calm to Scandinavian residences.'
+    finishes: ['قطع هندسي مخصص CNC', 'مخملي مصقول', 'جلدي عتيق', 'معالج بالرمل'],
+    absorption: '٠.١٥٪',
+    density: '٢,٧٤٠ كجم/م³',
+    strength: '١٤٨ ميجا باسكال',
+    desc: 'تجهيز ألواح وتكسيات ثلاثية الأبعاد منحوتة بدقة متناهية بالتحكم الرقمي، مخصصة للمشاريع الفندقية والإنشاءات المعمارية الكبرى.'
   }
 ]
 
@@ -109,34 +121,34 @@ const stopDrag = () => {
 </script>
 
 <template>
-  <section class="py-24 sm:py-36 bg-[#FFFFFF] border-b border-[#E4DDD3] overflow-hidden relative">
+  <section class="py-24 sm:py-36 bg-[#FFFFFF] border-b border-[#E2E8F0] overflow-hidden relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
       <!-- Top Section Header with Navigational Arrows -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 text-start">
         <div>
-          <span class="text-[11px] font-mono uppercase tracking-[0.25em] font-semibold text-[#B08B57] block mb-3">
-            Featured Quarry Releases
+          <span class="text-[11px] font-mono uppercase tracking-[0.25em] font-semibold text-[#3B82F6] block mb-3">
+            إنتاج المحاجر والكتل الصخرية والألواح
           </span>
-          <h2 class="font-editorial text-4xl sm:text-6xl text-[#2B2B2B] font-light leading-tight">
-            Signature <span class="italic text-[#B08B57]">Architectural</span> Slabs
+          <h2 class="font-editorial text-4xl sm:text-6xl text-[#0F172A] font-light leading-tight">
+            كتل وألواح خام <span class="italic text-[#3B82F6]">للتصدير والمشاريع</span>
           </h2>
         </div>
 
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-4 flex-row rtl:flex-row-reverse">
           <button 
             @click="scrollLeft"
-            class="w-12 h-12 rounded-full border border-[#E4DDD3] bg-[#FFFFFF] hover:bg-[#2B2B2B] hover:text-[#FFFFFF] hover:border-[#2B2B2B] text-[#2B2B2B] flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-105"
+            class="w-12 h-12 rounded-full border border-[#E2E8F0] bg-[#FFFFFF] hover:bg-[#1E3A8A] hover:text-[#FFFFFF] hover:border-[#1E3A8A] text-[#0F172A] flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-105"
             aria-label="Scroll Left"
           >
-            <ArrowLeft class="w-5 h-5" />
+            <ArrowLeft class="w-5 h-5 rtl:scale-x-[-1]" />
           </button>
           <button 
             @click="scrollRight"
-            class="w-12 h-12 rounded-full border border-[#E4DDD3] bg-[#FFFFFF] hover:bg-[#2B2B2B] hover:text-[#FFFFFF] hover:border-[#2B2B2B] text-[#2B2B2B] flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-105"
+            class="w-12 h-12 rounded-full border border-[#E2E8F0] bg-[#FFFFFF] hover:bg-[#1E3A8A] hover:text-[#FFFFFF] hover:border-[#1E3A8A] text-[#0F172A] flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-105"
             aria-label="Scroll Right"
           >
-            <ArrowRight class="w-5 h-5" />
+            <ArrowRight class="w-5 h-5 rtl:scale-x-[-1]" />
           </button>
         </div>
       </div>
@@ -155,68 +167,47 @@ const stopDrag = () => {
       <div 
         v-for="prod in products" 
         :key="prod.id"
-        class="w-[320px] sm:w-[380px] lg:w-[420px] shrink-0 snap-start bg-[#FFFFFF] rounded-[28px] overflow-hidden border border-[#E4DDD3] shadow-luxury transition-all duration-500 hover:shadow-luxury-hover hover:-translate-y-2 flex flex-col justify-between group"
+        class="w-[320px] sm:w-[380px] lg:w-[420px] shrink-0 snap-start bg-[#FFFFFF] rounded-[24px] overflow-hidden border border-[#E2E8F0] shadow-corporate transition-all duration-500 hover:shadow-2xl hover:border-[#3B82F6] hover:-translate-y-2 flex flex-col justify-between group"
       >
-        <!-- Top Image Container -->
-        <div class="relative h-72 sm:h-80 overflow-hidden bg-[#F4F1EA] pointer-events-none">
+        <!-- Large Product Image Container (h-80 sm:h-96) -->
+        <div class="relative h-80 sm:h-96 overflow-hidden bg-[#F8FAFC] pointer-events-none">
           <img 
             :src="prod.image" 
             :alt="prod.name"
             class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#2B2B2B]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-            <span class="text-[11px] font-mono font-semibold text-[#FFFFFF] uppercase tracking-wider bg-[#B08B57] px-3 py-1 rounded-full shadow-md">
-              {{ prod.absorption }} Water Abs
-            </span>
-          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-          <!-- Top Right Origin Badge -->
-          <div class="absolute top-4 right-4 bg-[#FFFFFF]/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#E4DDD3]/60 flex items-center gap-1.5 shadow-sm">
-            <MapPin class="w-3 h-3 text-[#B08B57]" />
-            <span class="text-[10px] font-mono font-semibold text-[#2B2B2B] uppercase tracking-wider">
-              Egypt
+          <!-- Blue Category Badge -->
+          <div class="absolute top-5 start-5 z-10">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#1E3A8A] text-[#FFFFFF] text-[11px] font-mono font-bold uppercase tracking-wider shadow-md">
+              {{ prod.category }}
             </span>
           </div>
         </div>
 
-        <!-- Bottom Content -->
-        <div class="p-6 sm:p-8 flex flex-col flex-1 justify-between">
-          <div>
-            <!-- Origin -->
-            <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-[#B08B57] font-semibold block mb-1">
-              {{ prod.origin }}
-            </span>
+        <!-- Minimal Modern Content: Country, Stone Name, View Details Button -->
+        <div class="p-6 sm:p-8 flex flex-col flex-1 justify-between text-start bg-[#FFFFFF]">
+          <div class="mb-6">
+            <!-- Country / Origin -->
+            <div class="flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#3B82F6] font-semibold mb-2.5">
+              <MapPin class="w-3.5 h-3.5 shrink-0" />
+              <span>{{ prod.country }} • {{ prod.origin }}</span>
+            </div>
 
             <!-- Stone Name -->
-            <h3 class="font-editorial text-2xl sm:text-[26px] font-bold text-[#2B2B2B] leading-tight group-hover:text-[#B08B57] transition-colors mb-4">
+            <h3 class="font-editorial text-2xl sm:text-[28px] font-bold text-[#0F172A] leading-tight group-hover:text-[#1E3A8A] transition-colors">
               {{ prod.name }}
             </h3>
-
-            <!-- Available Finishes -->
-            <div class="mb-6">
-              <span class="text-[10px] uppercase tracking-wider text-[#666666] font-semibold block mb-2">
-                Available Studio Finishes:
-              </span>
-              <div class="flex flex-wrap gap-1.5">
-                <span 
-                  v-for="fin in prod.finishes" 
-                  :key="fin"
-                  class="px-3 py-1 rounded-full bg-[#F4F1EA] border border-[#E4DDD3]/80 text-[10px] font-medium text-[#2B2B2B] flex items-center gap-1"
-                >
-                  <span class="w-1 h-1 rounded-full bg-[#B08B57]"></span>
-                  <span>{{ fin }}</span>
-                </span>
-              </div>
-            </div>
           </div>
 
-          <!-- Elegant View Details Button -->
+          <!-- Minimal View Details Button -->
           <button 
             @click="selectedProduct = prod"
-            class="w-full py-3.5 rounded-[20px] bg-[#F4F1EA] hover:bg-[#2B2B2B] text-[#2B2B2B] hover:text-[#FFFFFF] text-xs font-semibold uppercase tracking-[0.14em] transition-all duration-300 flex items-center justify-center gap-2 border border-[#E4DDD3] shadow-sm group/btn"
+            class="w-full py-3.5 rounded-[20px] bg-[#F8FAFC] hover:bg-[#1E3A8A] text-[#0F172A] hover:text-[#FFFFFF] text-xs font-semibold uppercase tracking-[0.14em] transition-all duration-300 flex items-center justify-center gap-2 border border-[#E2E8F0] shadow-sm group/btn"
           >
-            <span>View Details & Specs</span>
-            <ArrowUpRight class="w-4 h-4 text-[#B08B57] group-hover/btn:text-[#FFFFFF] transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+            <span>عرض التفاصيل والمواصفات</span>
+            <ArrowUpRight class="w-4 h-4 text-[#3B82F6] group-hover/btn:text-[#FFFFFF] transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 rtl:scale-x-[-1]" />
           </button>
         </div>
       </div>
@@ -231,74 +222,74 @@ const stopDrag = () => {
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
     >
-      <div v-if="selectedProduct" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#2B2B2B]/70 backdrop-blur-sm" @click.self="selectedProduct = null">
-        <div class="bg-[#FFFFFF] rounded-[32px] max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-[#E4DDD3] shadow-2xl p-6 sm:p-10 relative animate-in fade-in zoom-in-95 duration-300">
+      <div v-if="selectedProduct" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0F172A]/70 backdrop-blur-sm" @click.self="selectedProduct = null">
+        <div class="bg-[#FFFFFF] rounded-[20px] max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-[#E2E8F0] shadow-corporate p-6 sm:p-10 relative animate-in fade-in zoom-in-95 duration-300 text-start">
           
-          <button @click="selectedProduct = null" class="absolute top-6 right-6 p-2 rounded-full bg-[#F4F1EA] text-[#2B2B2B] hover:bg-[#B08B57] hover:text-[#FFFFFF] transition-colors">
+          <button @click="selectedProduct = null" class="absolute top-6 end-6 p-2 rounded-full bg-[#F8FAFC] text-[#0F172A] hover:bg-[#1E3A8A] hover:text-[#FFFFFF] transition-colors">
             ✕
           </button>
 
           <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            <div class="md:col-span-5 rounded-[24px] overflow-hidden bg-[#F4F1EA] h-72 md:h-full min-h-[280px]">
+            <div class="md:col-span-5 rounded-[16px] overflow-hidden bg-[#F8FAFC] h-72 md:h-full min-h-[280px]">
               <img :src="selectedProduct.image" :alt="selectedProduct.name" class="w-full h-full object-cover" />
             </div>
 
             <div class="md:col-span-7 flex flex-col justify-between">
               <div>
-                <span class="text-[10px] uppercase tracking-[0.2em] text-[#B08B57] font-semibold block mb-1">
+                <span class="text-[10px] uppercase tracking-[0.2em] text-[#3B82F6] font-semibold block mb-1">
                   {{ selectedProduct.origin }}
                 </span>
-                <h3 class="font-editorial text-3xl sm:text-4xl font-bold text-[#2B2B2B] mb-4">
+                <h3 class="font-editorial text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
                   {{ selectedProduct.name }}
                 </h3>
-                <p class="text-xs sm:text-sm text-[#666666] leading-relaxed mb-6">
+                <p class="text-xs sm:text-sm text-[#475569] leading-relaxed mb-6">
                   {{ selectedProduct.desc }}
                 </p>
 
                 <!-- Technical Specs Box -->
-                <div class="bg-[#F4F1EA] rounded-[20px] p-4 border border-[#E4DDD3] mb-6 grid grid-cols-3 gap-4 text-center">
+                <div class="bg-[#F8FAFC] rounded-[20px] p-4 border border-[#E2E8F0] mb-6 grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <span class="text-[9px] uppercase tracking-wider text-[#666666] block">Water Absorption</span>
-                    <span class="font-mono font-bold text-sm text-[#2B2B2B]">{{ selectedProduct.absorption }}</span>
+                    <span class="text-[9px] uppercase tracking-wider text-[#475569] block">امتصاص الماء</span>
+                    <span class="font-mono font-bold text-xs sm:text-sm text-[#0F172A]">{{ selectedProduct.absorption }}</span>
                   </div>
                   <div>
-                    <span class="text-[9px] uppercase tracking-wider text-[#666666] block">Density</span>
-                    <span class="font-mono font-bold text-sm text-[#2B2B2B]">{{ selectedProduct.density }}</span>
+                    <span class="text-[9px] uppercase tracking-wider text-[#475569] block">الكثافة</span>
+                    <span class="font-mono font-bold text-xs sm:text-sm text-[#0F172A]">{{ selectedProduct.density }}</span>
                   </div>
                   <div>
-                    <span class="text-[9px] uppercase tracking-wider text-[#666666] block">Strength</span>
-                    <span class="font-mono font-bold text-sm text-[#2B2B2B]">{{ selectedProduct.strength }}</span>
+                    <span class="text-[9px] uppercase tracking-wider text-[#475569] block">قوة التحمل</span>
+                    <span class="font-mono font-bold text-xs sm:text-sm text-[#0F172A]">{{ selectedProduct.strength }}</span>
                   </div>
                 </div>
 
                 <!-- Available Finishes -->
                 <div class="mb-6">
-                  <span class="text-xs font-semibold text-[#2B2B2B] uppercase tracking-wider block mb-2.5">
-                    Studio Custom Finishes:
+                  <span class="text-xs font-semibold text-[#0F172A] uppercase tracking-wider block mb-2.5">
+                    تشطيبات وخيارات التوريد للمشاريع:
                   </span>
                   <div class="flex flex-wrap gap-2">
-                    <span v-for="fin in selectedProduct.finishes" :key="fin" class="px-3.5 py-1.5 rounded-full bg-[#FFFFFF] border border-[#E4DDD3] text-[11px] font-medium text-[#2B2B2B] flex items-center gap-1.5 shadow-sm">
-                      <Check class="w-3.5 h-3.5 text-[#B08B57]" /> {{ fin }}
+                    <span v-for="fin in selectedProduct.finishes" :key="fin" class="px-3.5 py-1.5 rounded-full bg-[#FFFFFF] border border-[#E2E8F0] text-[11px] font-medium text-[#0F172A] flex items-center gap-1.5 shadow-sm">
+                      <Check class="w-3.5 h-3.5 text-[#3B82F6]" /> {{ fin }}
                     </span>
                   </div>
                 </div>
               </div>
 
               <!-- CTA in Modal -->
-              <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#E4DDD3]">
+              <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#E2E8F0]">
                 <a 
                   href="#sample-box"
                   @click="selectedProduct = null"
-                  class="flex-1 py-3.5 rounded-[20px] bg-[#B08B57] hover:bg-[#9A774A] text-[#FFFFFF] text-xs font-semibold uppercase tracking-[0.14em] flex items-center justify-center gap-2 shadow-md transition-all"
+                  class="flex-1 py-3.5 rounded-[20px] bg-[#1E3A8A] hover:bg-[#3B82F6] text-[#FFFFFF] text-xs font-semibold uppercase tracking-[0.14em] flex items-center justify-center gap-2 shadow-sm transition-all"
                 >
-                  <span>Request Sample Swatch</span>
-                  <ArrowUpRight class="w-4 h-4" />
+                  <span>طلب توريد تجاري ومواصفات</span>
+                  <ArrowUpRight class="w-4 h-4 rtl:scale-x-[-1]" />
                 </a>
                 <button 
                   @click="selectedProduct = null"
-                  class="px-5 py-3.5 rounded-[20px] border border-[#E4DDD3] text-[#2B2B2B] text-xs font-semibold uppercase tracking-[0.12em] hover:bg-[#F4F1EA]"
+                  class="px-5 py-3.5 rounded-[20px] border border-[#E2E8F0] text-[#0F172A] text-xs font-semibold uppercase tracking-[0.12em] hover:bg-[#F8FAFC]"
                 >
-                  Close Specs
+                  إغلاق المواصفات
                 </button>
               </div>
 

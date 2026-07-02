@@ -1,103 +1,75 @@
 <script setup lang="ts">
-import { ShieldCheck, Globe2, Sparkles, Building2 } from 'lucide-vue-next'
+import { ShieldCheck, Globe2, Building2 } from 'lucide-vue-next'
 
 const partners = [
-  { name: 'STUDIO NORDIC ARCHITECTURE', location: 'Copenhagen • Oslo', code: 'SN' },
-  { name: 'VARESE & PARTNERS STUDIO', location: 'Milan • Rome', code: 'VP' },
-  { name: 'AL-MANSOUR DEVELOPMENTS', location: 'Riyadh • Jeddah', code: 'AM' },
-  { name: 'FOSTER DESIGNS & BUILD', location: 'London • United Kingdom', code: 'FB' },
-  { name: 'METROPOLIS LUXURY SURFACES', location: 'New York • Miami', code: 'MS' },
-  { name: 'EMIRATES ARCHITECTURAL GROUP', location: 'Dubai • Abu Dhabi', code: 'EA' },
-  { name: 'ATELIER MEDITERRANEO', location: 'Barcelona • Athens', code: 'AM' },
-  { name: 'SCANDINAVIAN STONE FORM', location: 'Stockholm • Sweden', code: 'SF' },
+  { name: 'مجموعة نورديك للإنشاءات الدولية', location: 'كوبنهاغن • أوسلو', code: 'NC' },
+  { name: 'ائتلاف فاريزي للمشاريع القومية', location: 'ميلانو • روما', code: 'VC' },
+  { name: 'المنصور للهندسة والبنية التحتية', location: 'الرياض • جدة', code: 'AM' },
+  { name: 'فوستر الدولية للمطارات والموانئ', location: 'لندن • المملكة المتحدة', code: 'FA' },
+  { name: 'ميتروبوليس للمقاولات العامة', location: 'نيويورك • ميامي', code: 'MC' },
+  { name: 'المجموعة الهندسية للمشاريع الكبرى', location: 'دبي • أبوظبي', code: 'EG' },
+  { name: 'ائتلاف ميديترانيو للتطوير', location: 'برشلونة • أثينا', code: 'MD' },
+  { name: 'إسكندنافيان للبنية التحتية', location: 'ستوكهولم • السويد', code: 'SI' },
 ]
-
-// Duplicate list for seamless infinite marquee loop
-const marqueeList = [...partners, ...partners]
 </script>
 
 <template>
-  <section class="py-12 sm:py-16 bg-[#FFFFFF] border-b border-[#E4DDD3] overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+  <section class="py-24 sm:py-32 bg-[#F8FAFC] border-b border-[#E2E8F0] relative overflow-hidden">
+    <!-- Subtle architectural grid decoration -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.02]" style="background-image: radial-gradient(#0F172A 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
       
-      <!-- Centered Title with Minimal Spacing -->
-      <div class="text-center mb-8 sm:mb-10">
-        <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#666666] font-medium block mb-2">
-          International Provenance & Export
+      <!-- Centered Title with Generous Spacing -->
+      <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFFFF] border border-[#E2E8F0] shadow-sm text-[11px] font-mono uppercase tracking-[0.22em] text-[#3B82F6] font-semibold mb-4">
+          التوريد الدولي والمقاولات العملاقة
         </span>
-        <h3 class="font-editorial text-2xl sm:text-3xl text-[#2B2B2B] font-light tracking-wide">
-          Trusted by Architecture Studios & Global Contractors Worldwide
-        </h3>
+        <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#0F172A] font-bold tracking-tight leading-[1.15] text-balance">
+          موضع ثقة كبرى شركات المقاولات، والمطارات، ومطوري البنية التحتية عالمياً
+        </h2>
       </div>
 
-      <!-- Monochrome Logo Carousel with Subtle Edge Fade Mask -->
-      <div class="relative w-full overflow-hidden py-4 marquee-container">
-        
-        <!-- Subtle gradient mask on left and right edges for smooth fade -->
-        <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#FFFFFF] to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#FFFFFF] to-transparent z-10 pointer-events-none"></div>
-
-        <!-- Animated Infinite Track -->
-        <div class="flex items-center gap-12 sm:gap-16 lg:gap-20 w-max animate-marquee hover:[animation-play-state:paused]">
-          <div 
-            v-for="(partner, idx) in marqueeList" 
-            :key="idx"
-            class="flex items-center gap-3 sm:gap-4 group cursor-pointer opacity-40 hover:opacity-100 transition-all duration-500 hover:scale-105 shrink-0 grayscale hover:grayscale-0"
-          >
-            <!-- Minimalist Monochrome Emblem -->
-            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#2B2B2B]/40 flex items-center justify-center font-editorial font-bold text-xs sm:text-sm text-[#2B2B2B] group-hover:border-[#B08B57] group-hover:text-[#B08B57] group-hover:bg-[#F4F1EA] transition-all duration-300">
+      <!-- Centered Grid of Elegant White Cards with Hover Lift Effect -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div 
+          v-for="(partner, idx) in partners" 
+          :key="idx"
+          class="group bg-[#FFFFFF] rounded-[20px] p-6 sm:p-7 border border-[#E2E8F0] shadow-sm hover:shadow-corporate transition-all duration-300 hover:-translate-y-1.5 hover:border-[#1E3A8A]/30 flex flex-col justify-between text-start cursor-pointer relative overflow-hidden"
+        >
+          <!-- Top Emblem Box -->
+          <div class="flex items-center justify-between mb-8">
+            <div class="w-12 h-12 rounded-[16px] bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center font-editorial font-bold text-base text-[#1E3A8A] group-hover:bg-[#1E3A8A] group-hover:text-[#FFFFFF] group-hover:border-[#1E3A8A] transition-all duration-300 shadow-sm shrink-0">
               {{ partner.code }}
             </div>
+            <span class="w-2 h-2 rounded-full bg-[#E2E8F0] group-hover:bg-[#3B82F6] transition-colors duration-300"></span>
+          </div>
 
-            <!-- Typographical Logo Text -->
-            <div class="flex flex-col">
-              <span class="font-editorial text-sm sm:text-base font-bold tracking-[0.12em] text-[#2B2B2B] uppercase leading-tight group-hover:text-[#B08B57] transition-colors">
-                {{ partner.name }}
-              </span>
-              <span class="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.18em] text-[#666666] leading-none mt-0.5">
-                {{ partner.location }}
-              </span>
-            </div>
+          <!-- Partner Details -->
+          <div>
+            <h3 class="font-editorial text-base sm:text-lg font-bold tracking-wide text-[#0F172A] uppercase leading-snug mb-1.5 group-hover:text-[#1E3A8A] transition-colors">
+              {{ partner.name }}
+            </h3>
+            <p class="text-xs font-mono uppercase tracking-[0.16em] text-[#475569] leading-relaxed">
+              {{ partner.location }}
+            </p>
           </div>
         </div>
-
       </div>
 
-      <!-- Minimal Trust Badges Below Carousel -->
-      <div class="mt-8 pt-6 border-t border-[#E4DDD3]/50 flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#666666]">
-        <span class="flex items-center gap-2">
-          <ShieldCheck class="w-3.5 h-3.5 text-[#B08B57]" /> ASTM Standard Compliant
+      <!-- Minimal Trust Badges Below Grid -->
+      <div class="mt-16 sm:mt-20 pt-10 border-t border-[#E2E8F0] flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-xs uppercase tracking-[0.2em] text-[#475569] font-medium">
+        <span class="flex items-center gap-2.5">
+          <ShieldCheck class="w-4 h-4 text-[#3B82F6]" /> كتل وألواح خام مطابقة لمعايير ASTM و ISO العالمية
         </span>
-        <span class="flex items-center gap-2">
-          <Globe2 class="w-3.5 h-3.5 text-[#B08B57]" /> Direct Container Logistics
+        <span class="flex items-center gap-2.5">
+          <Globe2 class="w-4 h-4 text-[#3B82F6]" /> شحن وحاويات تصدير لوجستية مباشرة من المحجر
         </span>
-        <span class="flex items-center gap-2">
-          <Building2 class="w-3.5 h-3.5 text-[#B08B57]" /> Custom Millimeter Tolerances
+        <span class="flex items-center gap-2.5">
+          <Building2 class="w-4 h-4 text-[#3B82F6]" /> قدرات توريد ضخمة للمشاريع الحكومية والتجارية
         </span>
       </div>
 
     </div>
   </section>
 </template>
-
-<style scoped>
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 35s linear infinite;
-}
-
-/* Pause animation smoothly on hover for better UX */
-.marquee-container:hover .animate-marquee {
-  animation-play-state: paused;
-}
-</style>

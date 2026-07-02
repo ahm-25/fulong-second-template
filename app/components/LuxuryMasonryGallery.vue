@@ -2,134 +2,134 @@
 import { ref, computed } from 'vue'
 import { ArrowUpRight, Filter, Sparkles, Layers, Check, Shield, ArrowRight, Eye } from 'lucide-vue-next'
 
-const activeCategory = ref('All')
+const activeCategory = ref('الكل')
 const selectedItem = ref<any | null>(null)
 
 const categories = [
-  'All',
-  'Marble',
-  'Granite',
-  'Slabs',
-  'Tiles',
-  'Mosaic',
-  'Custom Projects'
+  'الكل',
+  'كتل رخام',
+  'كتل جرانيت',
+  'ألواح طاولات',
+  'بلاط وقطع',
+  'مشاريع قومية',
+  'حلول مخصصة'
 ]
 
 const masonryItems = [
   {
     id: 'sinai-pearl-marble',
-    title: 'Sinai Pearl Velvet Marble',
-    category: 'Marble',
-    origin: 'Mount Sinai Quarry, South Sinai',
+    title: 'كتل رخام لؤلؤة سيناء الخام',
+    category: 'كتل رخام',
+    origin: 'محجر جبل سيناء، جنوب سيناء',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
     heightClass: 'h-[520px] sm:h-[620px]',
-    desc: 'Our quintessential dolomitic marble featuring organic crystallization and warm earth-toned fossil veining. Widely specified in minimalist Scandinavian flooring.',
-    specs: { absorption: '0.18%', density: '2,680 kg/m³', strength: '135 MPa', finishes: ['Honed Velvet', 'Antique Leathered', 'Linear Fluted'] }
+    desc: 'كتل صخرية خام مستخرجة من محاجرنا في جبل سيناء بأوزان تصل إلى ٣٠ طناً، جاهزة للشحن أو النشر في مصنعنا لتلبية عقود التوريد الكبرى.',
+    specs: { absorption: '٠.١٨٪', density: '٢,٦٨٠ كجم/م³', strength: '١٣٥ ميجا باسكال', finishes: ['كتل خام (Blocks)', 'ألواح طاولات Slabs', 'نحت طولي ثلاثي الأبعاد'] }
   },
   {
     id: 'nero-aswan-granite',
-    title: 'Nero Aswan Volcanic Granite',
-    category: 'Granite',
-    origin: 'Aswan Monumental Quarries',
+    title: 'كتل جرانيت أسوان الأسود',
+    category: 'كتل جرانيت',
+    origin: 'محاجر أسوان التاريخية',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1200',
     heightClass: 'h-[380px] sm:h-[440px]',
-    desc: 'Deep volcanic obsidian granite interspersed with crystalline silver and rose quartz flecks. Engineered for extreme hardness and monumental architecture.',
-    specs: { absorption: '0.04%', density: '2,890 kg/m³', strength: '190 MPa', finishes: ['Flamed & Brushed', 'Mirror Polished', 'Leathered'] }
+    desc: 'كتل جرانيت بركاني خام فائقة الصلابة مستخرجة من محاجر أسوان التاريخية، مصممة لأعمال الرصف والبنية التحتية والمشاريع العملاقة.',
+    specs: { absorption: '٠.٠٤٪', density: '٢,٨٩٠ كجم/م³', strength: '١٩٠ ميجا باسكال', finishes: ['كتل رصف ضخمة', 'موشى بالهب ومفرش', 'مصقول مرآتي'] }
   },
   {
     id: 'bookmatched-slabs',
-    title: 'Book-Matched Galala Monoliths',
-    category: 'Slabs',
-    origin: 'Suez Eastern Desert Range',
+    title: 'ألواح رخام الجلالة الكريمي',
+    category: 'ألواح طاولات',
+    origin: 'سلسلة جبال الصحراء الشرقية، السويس',
     image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=1200',
     heightClass: 'h-[460px] sm:h-[560px]',
-    desc: 'Vein-continuous book-matched 30-ton slabs cut from creamy warm Galala limestone. Digitally planned in our studio for dramatic double-height feature walls.',
-    specs: { absorption: '0.12%', density: '2,710 kg/m³', strength: '142 MPa', finishes: ['Polished Mirror', 'Honed Monolith', 'Acid-Washed'] }
+    desc: 'ألواح طاولات مقصوصة من كتل حجر الجلالة الخام بمقاسات وسماكات مخصصة (٢٠-٥٠ ملم)، معالجة بأحدث آلات بريتون الإيطالية.',
+    specs: { absorption: '٠.١٢٪', density: '٢,٧١٠ كجم/م³', strength: '١٤٢ ميجا باسكال', finishes: ['مصقول مرآتي Polished', 'مخملي Honed', 'حجر وش جبل'] }
   },
   {
     id: 'geometric-mosaic',
-    title: 'Handcrafted Geometric Mosaic',
-    category: 'Mosaic',
-    origin: 'Cairo Artisan Studio',
+    title: 'بلاط أرصفة وميادين عامة',
+    category: 'بلاط وقطع',
+    origin: 'محاجر ومصنع السويس الآلي',
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200',
     heightClass: 'h-[360px] sm:h-[420px]',
-    desc: 'Waterjet-cut geometric stone mosaics combining Sinai Beige, Nero Aswan, and Triesta Grigio. Designed for luxury spa showers and boutique hotel floors.',
-    specs: { absorption: '0.15%', density: '2,720 kg/m³', strength: '150 MPa', finishes: ['Honed Velvet', 'Tumbled Antique', 'Brushed'] }
+    desc: 'بلاط حجري وجرانيتي مقصوص بدقة عالية ومقاوم للانزلاق والتآكل، مخصص لمشاريع التطوير العمراني، والساحات الخارجية للمطارات والفنادق.',
+    specs: { absorption: '٠.١٥٪', density: '٢,٧٢٠ كجم/م³', strength: '١٥٠ ميجا باسكال', finishes: ['بلاط خارجي', 'معتق عتيق', 'جلدي مقاوم للانزلاق'] }
   },
   {
     id: 'sculptural-sink-monolith',
-    title: 'Cantilevered Sculptural Sink Monolith',
-    category: 'Custom Projects',
-    origin: 'Suez 5-Axis CNC Atelier',
+    title: 'تكسيات واجهات المشاريع القومية',
+    category: 'مشاريع قومية',
+    origin: 'مصنع السويس خماسي المحاور، مصر',
     image: 'https://images.unsplash.com/photo-1598880940371-c756e071fa1a?auto=format&fit=crop&q=80&w=1200',
     heightClass: 'h-[560px] sm:h-[660px]',
-    desc: 'A seamless bathroom basin carved from a single 5-ton block of solid Sinai limestone using 5-axis robotic milling. Minimalist, monolithic, and eternal.',
-    specs: { absorption: '0.10%', density: '2,750 kg/m³', strength: '160 MPa', finishes: ['Honed Velvet', 'Interior Acid-Sealed'] }
+    desc: 'تجهيز وتفصيل ألواح واجهات ضخمة ومقصوصة بالتحكم الرقمي (CNC) للمباني الحكومية والمطارات والمقرات الإدارية الكبرى.',
+    specs: { absorption: '٠.١٠٪', density: '٢,٧٥٠ كجم/م³', strength: '١٦٠ ميجا باسكال', finishes: ['قص هندسي دقيق', 'معالجة ضد الحموضة والرطوبة'] }
   },
   {
     id: 'honed-velvet-tiles',
-    title: 'Sinai Pearl Honed Velvet Tiles',
-    category: 'Tiles',
-    origin: 'Mount Sinai Dolomitic Quarry',
+    title: 'ألواح وبلاط لؤلؤة سيناء',
+    category: 'ألواح طاولات',
+    origin: 'محجر جبل سيناء المملوك',
     image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=1200',
     heightClass: 'h-[420px] sm:h-[480px]',
-    desc: 'Precision-calibrated 60x120cm architectural tiles with micro-bevel edges. Delivers a soft, satiny matte finish that feels warm under barefoot touch.',
-    specs: { absorption: '0.18%', density: '2,680 kg/m³', strength: '135 MPa', finishes: ['Honed Velvet', 'Brushed Antique'] }
+    desc: 'ألواح وبلاط بمقاسات مخصصة (٦٠×١٢٠ سم أو طاولات كاملة) مع تشطيبات متنوعة لتجهيز الممرات والصالات الكبرى في المشاريع التجارية.',
+    specs: { absorption: '٠.١٨٪', density: '٢,٦٨٠ كجم/م³', strength: '١٣٥ ميجا باسكال', finishes: ['ألواح طاولات Slabs', 'بلاط قياسي Tiles'] }
   },
   {
     id: 'sahara-noir-marble',
-    title: 'Sahara Noir Gold Vein Marble',
-    category: 'Marble',
-    origin: 'Eastern Desert Mountains',
+    title: 'كتل وألواح صحارى نوار الفاخر',
+    category: 'كتل رخام',
+    origin: 'محاجر جبال البحر الأحمر، مصر',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
     heightClass: 'h-[480px] sm:h-[580px]',
-    desc: 'Dramatic obsidian black marble intersected by razor-sharp white and desert gold veins. Hand-selected for VIP statement bars and executive boardrooms.',
-    specs: { absorption: '0.08%', density: '2,850 kg/m³', strength: '165 MPa', finishes: ['Mirror Polished', '5-Axis Fluted', 'Honed'] }
+    desc: 'استخراج وتجهيز كتل وألواح صحارى نوار ذي العروق الذهبية، مختارة بعناية فائقة لعقود التصدير ومواصفات المقاولين الدوليين.',
+    specs: { absorption: '٠.٠٨٪', density: '٢,٨٥٠ كجم/م³', strength: '١٦٥ ميجا باسكال', finishes: ['كتل للتصدير Blocks', 'ألواح مصقولة Polished'] }
   },
   {
     id: '3d-fluted-wall-panel',
-    title: '3D Linear Fluted Wall Cladding',
-    category: 'Custom Projects',
-    origin: 'Suez CNC Engineering Studio',
+    title: 'حلول قص هندسي ثلاثي الأبعاد',
+    category: 'حلول مخصصة',
+    origin: 'استوديو هندسة التحكم الرقمي بالسويس',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1200',
     heightClass: 'h-[400px] sm:h-[460px]',
-    desc: 'Salvatori-inspired rhythmic fluted grooves carved into solid Egyptian stone. Creates captivating architectural shadow play under directional lighting.',
-    specs: { absorption: '0.12%', density: '2,710 kg/m³', strength: '145 MPa', finishes: ['5-Axis Waterjet Fluted', 'Sandblasted Grooves'] }
+    desc: 'تفصيل وحفر آلي باستخدام أحدث الروبوتات خماسية المحاور لإنتاج جدران وتكسيات معمارية مضلعة للمشاريع الفندقية والتجارية الفاخرة.',
+    specs: { absorption: '٠.١٢٪', density: '٢,٧١٠ كجم/م³', strength: '١٤٥ ميجا باسكال', finishes: ['نحت مضلع بنفث الماء', 'تكسيات ثلاثية الأبعاد'] }
   },
   {
     id: 'red-aswan-monumental',
-    title: 'Red Aswan Monumental Granite',
-    category: 'Granite',
-    origin: 'Aswan Southern Quarries',
+    title: 'كتل وألواح جرانيت أسوان الأحمر',
+    category: 'كتل جرانيت',
+    origin: 'محاجر أسوان التاريخية المملوكة',
     image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200',
     heightClass: 'h-[500px] sm:h-[600px]',
-    desc: 'The iconic rose-red granite utilized since the Pharaohs for monumental obelisks. Today engineered by Atelier Sinai for outdoor commercial plazas and facades.',
-    specs: { absorption: '0.05%', density: '2,880 kg/m³', strength: '185 MPa', finishes: ['Flamed', 'Bush-Hammered', 'Polished Monolith'] }
+    desc: 'كتل جرانيت أحمر تاريخي مستخرجة من محاجر أسوان، مجهزة للرصف الثقيل والواجهات المعمارية العاتية ومشاريع البنية التحتية.',
+    specs: { absorption: '٠.٠٥٪', density: '٢,٨٨٠ كجم/م³', strength: '١٨٥ ميجا باسكال', finishes: ['كتل خام Blocks', 'موشى باللهب', 'مصقول مرآتي'] }
   }
 ]
 
 const filteredItems = computed(() => {
-  if (activeCategory.value === 'All') return masonryItems
+  if (activeCategory.value === 'الكل') return masonryItems
   return masonryItems.filter(item => item.category === activeCategory.value)
 })
 </script>
 
 <template>
-  <section id="collections" class="py-24 sm:py-36 bg-[#F4F1EA] relative border-b border-[#E4DDD3]">
+  <section id="collections" class="py-24 sm:py-36 bg-[#F8FAFC] relative border-b border-[#E2E8F0]">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
       
       <!-- Editorial Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 text-start">
         <div>
-          <span class="text-[11px] font-mono uppercase tracking-[0.25em] font-semibold text-[#B08B57] block mb-3">
-            Architectural Surface Gallery
+          <span class="text-[11px] font-mono uppercase tracking-[0.25em] font-semibold text-[#3B82F6] block mb-3">
+            معرض منتجات المحاجر والمصنع
           </span>
-          <h2 class="font-editorial text-4xl sm:text-6xl text-[#2B2B2B] font-light leading-tight">
-            Curated <span class="italic text-[#B08B57]">Masonry</span> Collections
+          <h2 class="font-editorial text-4xl sm:text-6xl text-[#0F172A] font-light leading-tight">
+            كتل وألواح خام <span class="italic text-[#3B82F6]">بمواصفات قياسية</span>
           </h2>
         </div>
-        <p class="text-sm sm:text-base text-[#666666] max-w-md leading-relaxed">
-          An editorial showcase of our custom stone monoliths, book-matched slabs, and architectural mosaics—sculpted without equal-height constraints to highlight natural geological scale.
+        <p class="text-sm sm:text-base text-[#475569] max-w-md leading-relaxed">
+          استعراض شامل لكتلنا الرخامية والجرانيتية الخام المستخرجة من محاجرنا، إلى جانب ألواح الطاولات، والبلاط، وحلول القص المخصص لتوريدات المشاريع الكبرى.
         </p>
       </div>
 
@@ -141,65 +141,57 @@ const filteredItems = computed(() => {
           @click="activeCategory = cat"
           class="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-[0.14em] whitespace-nowrap transition-all duration-300 border flex items-center gap-2"
           :class="activeCategory === cat 
-            ? 'bg-[#2B2B2B] text-[#FFFFFF] border-[#2B2B2B] shadow-md -translate-y-0.5' 
-            : 'bg-[#FFFFFF] text-[#666666] border-[#E4DDD3] hover:border-[#B08B57] hover:text-[#2B2B2B]'"
+            ? 'bg-[#1E3A8A] text-[#FFFFFF] border-[#1E3A8A] shadow-sm -translate-y-0.5' 
+            : 'bg-[#FFFFFF] text-[#475569] border-[#E2E8F0] hover:border-[#3B82F6] hover:text-[#0F172A]'"
         >
           <span>{{ cat }}</span>
-          <span v-if="activeCategory === cat" class="w-1.5 h-1.5 rounded-full bg-[#B08B57]"></span>
+          <span v-if="activeCategory === cat" class="w-1.5 h-1.5 rounded-full bg-[#3B82F6]"></span>
         </button>
       </div>
 
       <!-- Asymmetrical Editorial Masonry Layout (CSS Multi-Columns avoiding equal-height cards) -->
-      <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-6 sm:gap-8 space-y-6 sm:space-y-8">
         <div 
           v-for="item in filteredItems" 
           :key="item.id"
-          class="break-inside-avoid relative rounded-[28px] overflow-hidden group cursor-pointer border border-[#E4DDD3] shadow-luxury transition-all duration-700 hover:shadow-luxury-hover hover:-translate-y-1.5 bg-[#2B2B2B]"
+          class="break-inside-avoid relative rounded-[20px] overflow-hidden group cursor-pointer border border-[#E2E8F0] shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-[#0F172A]"
           :class="item.heightClass"
           @click="selectedItem = item"
         >
-          <!-- Large Premium Image with Zoom Effect -->
+          <!-- Large Premium Product Image with Smooth Hover Zoom -->
           <img 
             :src="item.image" 
             :alt="item.title"
-            class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-11"
           />
 
-          <!-- Soft Dark Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-[#2B2B2B]/95 via-[#2B2B2B]/40 to-transparent opacity-65 group-hover:opacity-90 transition-opacity duration-500"></div>
+          <!-- Subtle gradient at rest for legibility -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-[#0F172A]/25 to-transparent opacity-65 group-hover:opacity-0 transition-opacity duration-500"></div>
 
-          <!-- Top Category & Origin Pill -->
-          <div class="absolute top-6 left-6 right-6 flex items-center justify-between pointer-events-none">
-            <span class="bg-[#FFFFFF]/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#E4DDD3]/60 text-[10px] font-mono font-bold text-[#2B2B2B] uppercase tracking-wider shadow-sm">
+          <!-- Vibrant Blue Overlay on Hover -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#1E3A8A]/95 via-[#1E3A8A]/75 to-[#1E3A8A]/30 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[1px]"></div>
+
+          <!-- Top Category Pill (Minimal) -->
+          <div class="absolute top-5 start-5 end-5 flex items-center justify-between pointer-events-none z-10">
+            <span class="bg-[#FFFFFF]/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#E2E8F0] text-[10px] font-mono font-bold text-[#0F172A] uppercase tracking-wider shadow-sm transition-transform duration-500 group-hover:-translate-y-1">
               {{ item.category }}
-            </span>
-            <span class="text-[10px] uppercase tracking-widest text-[#FFFFFF] font-medium opacity-80 drop-shadow">
-              {{ item.origin }}
             </span>
           </div>
 
-          <!-- Bottom Editorial Content & Animated Arrow Button -->
-          <div class="absolute bottom-6 left-6 right-6 flex flex-col justify-end">
-            <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-[#B08B57] font-semibold block mb-1">
-              Atelier Architectural Slabs
-            </span>
-            <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-[#FFFFFF] leading-tight mb-2 group-hover:text-[#B08B57] transition-colors">
-              {{ item.title }}
-            </h3>
-            <p class="text-xs sm:text-[13px] text-[#E4DDD3]/80 leading-relaxed line-clamp-2 mb-6">
-              {{ item.desc }}
-            </p>
-
-            <!-- "View Collection" Button with Animated Arrow -->
-            <div class="pt-4 border-t border-[#FFFFFF]/15 flex items-center justify-between">
-              <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#B08B57] text-[#FFFFFF] text-xs font-semibold uppercase tracking-[0.14em] shadow-md transition-all duration-300 group-hover:bg-[#FFFFFF] group-hover:text-[#2B2B2B]">
-                <span>View Collection</span>
-                <ArrowUpRight class="w-4 h-4 text-[#FFFFFF] group-hover:text-[#2B2B2B] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <!-- Minimal Product Information & Animated Arrow (Editorial Appearance) -->
+          <div class="absolute bottom-6 start-6 end-6 flex items-end justify-between z-10">
+            <div class="flex flex-col text-start transition-transform duration-500 group-hover:-translate-y-1 max-w-[80%]">
+              <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-[#3B82F6] group-hover:text-[#DBEAFE] font-semibold block mb-1.5 transition-colors">
+                {{ item.origin }}
               </span>
+              <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-[#FFFFFF] leading-tight">
+                {{ item.title }}
+              </h3>
+            </div>
 
-              <span class="text-[11px] font-mono font-semibold text-[#E4DDD3] opacity-70 group-hover:opacity-100 transition-opacity">
-                {{ item.specs.absorption }} Abs
-              </span>
+            <!-- Animated Arrow Icon -->
+            <div class="w-12 h-12 rounded-full bg-[#FFFFFF] text-[#1E3A8A] group-hover:bg-[#3B82F6] group-hover:text-[#FFFFFF] flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75 shrink-0">
+              <ArrowUpRight class="w-5 h-5 transition-transform duration-300 group-hover:scale-11 rtl:scale-x-[-1]" />
             </div>
           </div>
         </div>
@@ -216,74 +208,74 @@ const filteredItems = computed(() => {
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
     >
-      <div v-if="selectedItem" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#2B2B2B]/70 backdrop-blur-sm" @click.self="selectedItem = null">
-        <div class="bg-[#FFFFFF] rounded-[32px] max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-[#E4DDD3] shadow-2xl p-6 sm:p-10 relative animate-in fade-in zoom-in-95 duration-300">
+      <div v-if="selectedItem" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0F172A]/70 backdrop-blur-sm" @click.self="selectedItem = null">
+        <div class="bg-[#FFFFFF] rounded-[20px] max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-[#E2E8F0] shadow-corporate p-6 sm:p-10 relative animate-in fade-in zoom-in-95 duration-300 text-start">
           
-          <button @click="selectedItem = null" class="absolute top-6 right-6 p-2 rounded-full bg-[#F4F1EA] text-[#2B2B2B] hover:bg-[#B08B57] hover:text-[#FFFFFF] transition-colors">
+          <button @click="selectedItem = null" class="absolute top-6 end-6 p-2 rounded-full bg-[#F8FAFC] text-[#0F172A] hover:bg-[#1E3A8A] hover:text-[#FFFFFF] transition-colors">
             ✕
           </button>
 
           <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            <div class="md:col-span-5 rounded-[24px] overflow-hidden bg-[#F4F1EA] h-72 md:h-full min-h-[280px]">
+            <div class="md:col-span-5 rounded-[16px] overflow-hidden bg-[#F8FAFC] h-72 md:h-full min-h-[280px]">
               <img :src="selectedItem.image" :alt="selectedItem.title" class="w-full h-full object-cover" />
             </div>
 
             <div class="md:col-span-7 flex flex-col justify-between">
               <div>
-                <span class="text-[10px] uppercase tracking-[0.2em] text-[#B08B57] font-semibold block mb-1">
+                <span class="text-[10px] uppercase tracking-[0.2em] text-[#3B82F6] font-semibold block mb-1">
                   {{ selectedItem.origin }} • {{ selectedItem.category }}
                 </span>
-                <h3 class="font-editorial text-3xl sm:text-4xl font-bold text-[#2B2B2B] mb-4">
+                <h3 class="font-editorial text-3xl sm:text-4xl font-bold text-[#0F172A] mb-4">
                   {{ selectedItem.title }}
                 </h3>
-                <p class="text-xs sm:text-sm text-[#666666] leading-relaxed mb-6">
+                <p class="text-xs sm:text-sm text-[#475569] leading-relaxed mb-6">
                   {{ selectedItem.desc }}
                 </p>
 
                 <!-- Technical Specs Box -->
-                <div class="bg-[#F4F1EA] rounded-[20px] p-4 border border-[#E4DDD3] mb-6 grid grid-cols-3 gap-4 text-center">
+                <div class="bg-[#F8FAFC] rounded-[20px] p-4 border border-[#E2E8F0] mb-6 grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <span class="text-[9px] uppercase tracking-wider text-[#666666] block">Water Absorption</span>
-                    <span class="font-mono font-bold text-sm text-[#2B2B2B]">{{ selectedItem.specs.absorption }}</span>
+                    <span class="text-[9px] uppercase tracking-wider text-[#475569] block">امتصاص الماء</span>
+                    <span class="font-mono font-bold text-xs sm:text-sm text-[#0F172A]">{{ selectedItem.specs.absorption }}</span>
                   </div>
                   <div>
-                    <span class="text-[9px] uppercase tracking-wider text-[#666666] block">Density</span>
-                    <span class="font-mono font-bold text-sm text-[#2B2B2B]">{{ selectedItem.specs.density }}</span>
+                    <span class="text-[9px] uppercase tracking-wider text-[#475569] block">الكثافة</span>
+                    <span class="font-mono font-bold text-xs sm:text-sm text-[#0F172A]">{{ selectedItem.specs.density }}</span>
                   </div>
                   <div>
-                    <span class="text-[9px] uppercase tracking-wider text-[#666666] block">Strength</span>
-                    <span class="font-mono font-bold text-sm text-[#2B2B2B]">{{ selectedItem.specs.strength }}</span>
+                    <span class="text-[9px] uppercase tracking-wider text-[#475569] block">قوة التحمل</span>
+                    <span class="font-mono font-bold text-xs sm:text-sm text-[#0F172A]">{{ selectedItem.specs.strength }}</span>
                   </div>
                 </div>
 
                 <!-- Available Finishes -->
                 <div class="mb-6">
-                  <span class="text-xs font-semibold text-[#2B2B2B] uppercase tracking-wider block mb-2.5">
-                    Studio Custom Finishes:
+                  <span class="text-xs font-semibold text-[#0F172A] uppercase tracking-wider block mb-2.5">
+                    تشطيبات وخيارات التوريد للمشاريع:
                   </span>
                   <div class="flex flex-wrap gap-2">
-                    <span v-for="fin in selectedItem.specs.finishes" :key="fin" class="px-3.5 py-1.5 rounded-full bg-[#FFFFFF] border border-[#E4DDD3] text-[11px] font-medium text-[#2B2B2B] flex items-center gap-1.5 shadow-sm">
-                      <Check class="w-3.5 h-3.5 text-[#B08B57]" /> {{ fin }}
+                    <span v-for="fin in selectedItem.specs.finishes" :key="fin" class="px-3.5 py-1.5 rounded-full bg-[#FFFFFF] border border-[#E2E8F0] text-[11px] font-medium text-[#0F172A] flex items-center gap-1.5 shadow-sm">
+                      <Check class="w-3.5 h-3.5 text-[#3B82F6]" /> {{ fin }}
                     </span>
                   </div>
                 </div>
               </div>
 
               <!-- CTA in Modal -->
-              <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#E4DDD3]">
+              <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#E2E8F0]">
                 <a 
                   href="#sample-box"
                   @click="selectedItem = null"
-                  class="flex-1 py-3.5 rounded-[20px] bg-[#B08B57] hover:bg-[#9A774A] text-[#FFFFFF] text-xs font-semibold uppercase tracking-[0.14em] flex items-center justify-center gap-2 shadow-md transition-all"
+                  class="flex-1 py-3.5 rounded-[20px] bg-[#1E3A8A] hover:bg-[#3B82F6] text-[#FFFFFF] text-xs font-semibold uppercase tracking-[0.14em] flex items-center justify-center gap-2 shadow-sm transition-all"
                 >
-                  <span>Request Sample Swatch</span>
-                  <ArrowUpRight class="w-4 h-4" />
+                  <span>طلب توريد تجاري ومواصفات</span>
+                  <ArrowUpRight class="w-4 h-4 rtl:scale-x-[-1]" />
                 </a>
                 <button 
                   @click="selectedItem = null"
-                  class="px-5 py-3.5 rounded-[20px] border border-[#E4DDD3] text-[#2B2B2B] text-xs font-semibold uppercase tracking-[0.12em] hover:bg-[#F4F1EA]"
+                  class="px-5 py-3.5 rounded-[20px] border border-[#E2E8F0] text-[#0F172A] text-xs font-semibold uppercase tracking-[0.12em] hover:bg-[#F8FAFC]"
                 >
-                  Close Specs
+                  إغلاق المواصفات
                 </button>
               </div>
 

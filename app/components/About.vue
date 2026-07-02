@@ -1,168 +1,144 @@
 <script setup lang="ts">
-import { Award, Cpu, Sparkles, ShieldCheck, Package, Globe2, Users, ArrowUpRight, MapPin } from 'lucide-vue-next'
+import { Award, Cpu, Sparkles, Globe2, ArrowUpRight, MapPin, ShieldCheck } from 'lucide-vue-next'
 
-const timelineItems = [
+const featureCards = [
   {
     icon: Award,
-    title: '26 Years Experience',
-    desc: 'Over two decades of geological provenance and master stone extraction from exclusive Mount Sinai and Galala quarries.'
+    title: 'امتلاك المحاجر واستخراج الخام',
+    desc: 'أكثر من عقدين من التشغيل المباشر واستخراج الكتل الصخرية الخام بمهارة فائقة من محاجرنا المملوكة في سيناء وأسوان.'
   },
   {
     icon: Cpu,
-    title: 'Advanced Machinery',
-    desc: 'State-of-the-art Italian Breton and Pedrini 5-axis CNC robotic waterjet mills achieving millimeter precision below 0.2mm.'
+    title: 'قدرة إنتاجية ضخمة للكتل',
+    desc: 'تجهيز ونشر كتل خام تزن حتى ٣٠ طناً، مع قدرة استخراج سنوية تتجاوز ٢٥٠,٠٠٠ متر مكعب لتلبية طلبات المشاريع العملاقة.'
   },
   {
     icon: Sparkles,
-    title: 'Premium Quality',
-    desc: '100% organic dolomitic marble and deep volcanic obsidian granite selected for structural density and uniform veining.'
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Strict Inspection',
-    desc: 'Rigorous ASTM standard compliance, UV epoxy vacuum treatment, and zero micro-fracturing verification on every slab.'
-  },
-  {
-    icon: Package,
-    title: 'Professional Packaging',
-    desc: 'Heavy-duty fumigated wooden A-frames and custom reinforced foam crates engineered for safe overseas container transit.'
+    title: 'رقابة جودة صارمة ومعالجة متقدمة',
+    desc: 'فحص دقيق بالسلامة الهيكلية والخلو من التصدعات، مع معالجة رقمية باستخدام آلات بريتون الإيطالية متعددة الشفرات.'
   },
   {
     icon: Globe2,
-    title: 'Worldwide Export',
-    desc: 'Containerized direct marine logistics from the Port of Suez to architectural job sites across 30+ international markets.'
-  },
-  {
-    icon: Users,
-    title: 'Dedicated Team',
-    desc: 'Expert architectural engineers, CAD drafters, and master stone carvers guiding every project from quarry extraction to final installation.'
+    title: 'شحن وحاويات تصدير لوجستية',
+    desc: 'دعم لوجستي مباشر لتنظيم وشحن حاويات الكتل والألواح من المحجر والمصنع إلى أكثر من ٣٥ دولة حول العالم.'
   }
 ]
 </script>
 
 <template>
-  <section id="about" class="py-28 sm:py-40 bg-[#F4F1EA] border-b border-[#E4DDD3] relative overflow-hidden">
+  <section id="about" class="py-28 sm:py-40 bg-[#F8FAFC] border-b border-[#E2E8F0] relative overflow-hidden">
     <!-- Subtle architectural grid pattern background -->
-    <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: radial-gradient(#2B2B2B 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: radial-gradient(#0F172A 1px, transparent 1px); background-size: 36px 36px;"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
       
-      <!-- Asymmetrical Layout Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <!-- Modern Asymmetrical Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-center">
         
-        <!-- Left Side: Large Rounded Factory Image (Sticky on desktop so it follows the timeline scroll) (6 Cols) -->
-        <div class="lg:col-span-6 relative lg:sticky lg:top-32 self-start">
+        <!-- Left Side: Large Rounded Image Container (6 Cols) -->
+        <div class="lg:col-span-6 relative">
           
-          <!-- Main Factory Masterpiece Image Container -->
-          <div class="relative rounded-[32px] overflow-hidden bg-[#FFFFFF] p-3 sm:p-4 border border-[#E4DDD3] shadow-luxury-hover group transition-all duration-500">
-            <div class="relative h-[480px] sm:h-[620px] lg:h-[720px] rounded-[24px] overflow-hidden bg-[#2B2B2B]">
+          <!-- Masterpiece Image Card with 24px Rounded Corners -->
+          <div class="relative rounded-[24px] overflow-hidden bg-[#FFFFFF] p-3 sm:p-4 border border-[#E2E8F0] shadow-corporate group transition-all duration-500 hover:shadow-2xl">
+            <div class="relative h-[520px] sm:h-[640px] lg:h-[700px] rounded-[18px] overflow-hidden bg-[#0F172A]">
               <img 
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1400" 
                 alt="Atelier Sinai Automated Factory in Suez" 
                 class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#2B2B2B]/85 via-transparent to-transparent opacity-70"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-transparent to-transparent opacity-75"></div>
 
-              <!-- Top Left Location Pill -->
-              <div class="absolute top-5 left-5 bg-[#FFFFFF]/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#E4DDD3]/60 flex items-center gap-2 shadow-sm">
-                <MapPin class="w-3.5 h-3.5 text-[#B08B57]" />
-                <span class="text-[10px] sm:text-[11px] font-bold text-[#2B2B2B] uppercase tracking-wider">
-                  50,000 m² Automated Facility • Suez, Egypt
+              <!-- Top Location Badge -->
+              <div class="absolute top-6 start-6 bg-[#FFFFFF]/95 backdrop-blur-md px-4 py-2 rounded-full border border-[#E2E8F0] flex items-center gap-2.5 shadow-md">
+                <MapPin class="w-4 h-4 text-[#1E3A8A]" />
+                <span class="text-xs font-bold text-[#0F172A] uppercase tracking-wider">
+                  محاجر جبل سيناء ومصنع المعالجة بالسويس • مصر
                 </span>
               </div>
 
               <!-- Bottom Glass Info Box inside image -->
-              <div class="absolute bottom-6 left-6 right-6 bg-[#FFFFFF]/95 backdrop-blur-md p-6 rounded-[20px] border border-[#E4DDD3]/60 shadow-lg">
-                <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-[#B08B57] font-semibold block mb-1">
-                  Zero-Waste Closed Loop Production
+              <div class="absolute bottom-6 start-6 end-6 bg-[#FFFFFF]/95 backdrop-blur-md p-6 sm:p-8 rounded-[20px] border border-[#E2E8F0] shadow-xl text-start transition-transform duration-500 group-hover:-translate-y-1">
+                <span class="text-[11px] font-mono uppercase tracking-[0.2em] text-[#3B82F6] font-bold block mb-1.5">
+                  استخراج وتعدين مستدام
                 </span>
-                <h4 class="font-editorial text-2xl font-bold text-[#2B2B2B] mb-2">
-                  100% Solar-Powered Stone Milling
+                <h4 class="font-editorial text-2xl sm:text-3xl font-bold text-[#0F172A] mb-2.5">
+                  عمليات تعدين ومحاجر صديقة للبيئة وإعادة تدوير المياه
                 </h4>
-                <p class="text-xs text-[#666666] leading-relaxed">
-                  Our manufacturing facility recycles 98% of quarry cutting water and operates exclusively on renewable solar power, setting a new global standard for eco-conscious luxury stone processing.
+                <p class="text-xs sm:text-sm text-[#475569] leading-relaxed font-normal">
+                  نطبق أعلى معايير الاستدامة في محاجرنا ومصنعنا، حيث نعيد تدوير ٩٨٪ من المياه ونعتمد على الطاقة الشمسية لتقليل البصمة الكربونية في إنتاج الكتل والألواح.
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Secondary Floating Detail Card (overlapping bottom right) -->
-          <div class="hidden sm:flex absolute -bottom-6 -right-6 bg-[#FFFFFF] p-5 rounded-[24px] border border-[#E4DDD3] shadow-luxury items-center gap-4 z-20 max-w-xs animate-in fade-in duration-700">
-            <div class="w-12 h-12 rounded-2xl bg-[#F4F1EA] flex items-center justify-center text-[#B08B57] shrink-0 font-editorial font-bold text-xl">
-              26+
+          <!-- Secondary Floating Experience Badge -->
+          <div class="hidden sm:flex absolute -bottom-6 -end-6 bg-[#FFFFFF] p-5 rounded-[20px] border border-[#E2E8F0] shadow-2xl items-center gap-4 z-20 max-w-xs transition-transform duration-500 hover:-translate-y-1 text-start">
+            <div class="w-14 h-14 rounded-[16px] bg-[#1E3A8A] flex items-center justify-center text-[#FFFFFF] shrink-0 font-editorial font-bold text-2xl shadow-sm">
+              ٢٦+
             </div>
             <div>
-              <span class="text-xs font-bold text-[#2B2B2B] block">Years of Provenance</span>
-              <span class="text-[11px] text-[#666666]">Extracting Sinai Pearl & Galala Marble</span>
+              <span class="text-xs font-bold text-[#0F172A] block leading-snug">عاماً من قيادة المحاجر والاستخراج</span>
+              <span class="text-[11px] text-[#475569]">في توريد الكتل الخام والمشاريع القومية</span>
             </div>
           </div>
 
-          <!-- Decorative Accent Element -->
-          <div class="absolute -top-6 -left-6 w-40 h-40 rounded-full border border-[#B08B57]/20 -z-10 pointer-events-none"></div>
+          <!-- Decorative Architectural Ring -->
+          <div class="absolute -top-8 -start-8 w-44 h-44 rounded-full border border-[#1E3A8A]/15 -z-10 pointer-events-none"></div>
         </div>
 
-        <!-- Right Side: Editorial Content & Premium Vertical Timeline (6 Cols) -->
-        <div class="lg:col-span-6 flex flex-col justify-center">
+        <!-- Right Side: Editorial Content & 2x2 Feature Cards Grid (6 Cols) -->
+        <div class="lg:col-span-6 flex flex-col justify-center text-start">
           
           <!-- Small Label -->
-          <span class="text-[11px] font-mono uppercase tracking-[0.25em] font-semibold text-[#B08B57] block mb-4">
-            The Atelier Heritage & Manufactory
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFFFF] border border-[#E2E8F0] shadow-sm text-[11px] font-mono uppercase tracking-[0.22em] text-[#3B82F6] font-semibold w-max mb-6">
+            <ShieldCheck class="w-3.5 h-3.5 text-[#1E3A8A]" /> قصة محاجرنا وقدراتنا الصناعية
           </span>
 
           <!-- Large Editorial Title -->
-          <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl text-[#2B2B2B] font-light leading-[1.08] tracking-tight mb-6">
-            Where Ancient Egyptian Geology Meets <span class="italic font-normal text-[#B08B57]">Italian CNC Mastery</span>.
+          <h2 class="font-editorial text-4xl sm:text-5xl lg:text-[3.5rem] text-[#0F172A] font-bold leading-[1.12] tracking-tight mb-6">
+            امتلاك مباشر للمحاجر، وقدرات استخراج وإنتاج <span class="italic font-normal text-[#1E3A8A]">للمشاريع العالمية العملاقة</span>.
           </h2>
 
           <!-- Short Company Introduction -->
-          <p class="text-base sm:text-lg text-[#666666] font-normal leading-relaxed mb-10 sm:mb-12">
-            Founded on an uncompromising vision for architectural perfection, Atelier Sinai operates Egypt’s most advanced natural stone processing manufactory. We extract 30-ton monolithic blocks from our exclusive quarries across Mount Sinai and Galala, transforming them into bespoke cut-to-size slabs, fluted wall panels, and book-matched masterpieces for world-renowned architecture studios.
+          <p class="text-base sm:text-lg text-[#475569] font-normal leading-relaxed mb-10 sm:mb-12">
+            نحن شركة رائدة في امتلاك وتشغيل محاجر الرخام والجرانيت في مصر، متخصصون في استخراج وتوريد الكتل الصخرية الخام (Blocks) وألواح الطاولات بكميات تجارية ضخمة. نضع إمكانيات محاجرنا ومصنعنا الآلي بالسويس تحت تصرف شركات المقاولات الدولية ومطوري المطارات والمشاريع الحكومية والفنادق الكبرى.
           </p>
 
-          <!-- Premium Vertical Timeline (replacing icon cards) -->
-          <div class="relative pl-8 sm:pl-11 space-y-6 sm:space-y-7 my-2">
-            <!-- Elegant Connecting Line -->
-            <div class="absolute top-4 bottom-4 left-[15px] sm:left-[19px] w-[1.5px] bg-gradient-to-b from-[#B08B57] via-[#E4DDD3] to-[#E4DDD3]/20"></div>
-
-            <!-- 7 Timeline Items -->
+          <!-- 2x2 Grid of White Feature Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-2">
             <div 
-              v-for="(item, idx) in timelineItems" 
+              v-for="(card, idx) in featureCards" 
               :key="idx"
-              class="relative group"
+              class="group bg-[#FFFFFF] rounded-[20px] p-6 sm:p-7 border border-[#E2E8F0] shadow-sm hover:shadow-corporate transition-all duration-300 hover:-translate-y-1.5 hover:border-[#1E3A8A]/30 flex flex-col justify-between text-start relative overflow-hidden"
             >
-              <!-- Outlined Icon Node on the Line -->
-              <div class="absolute -left-[32px] sm:-left-[44px] top-1 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#FFFFFF] border-2 border-[#E4DDD3] group-hover:border-[#B08B57] group-hover:bg-[#2B2B2B] text-[#B08B57] group-hover:text-[#FFFFFF] flex items-center justify-center transition-all duration-300 shadow-sm z-10">
-                <component :is="item.icon" class="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.5]" />
+              <!-- Blue Accent Outline Icon -->
+              <div class="w-12 h-12 rounded-[16px] bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#1E3A8A] group-hover:bg-[#1E3A8A] group-hover:text-[#FFFFFF] group-hover:border-[#1E3A8A] transition-all duration-300 shadow-sm mb-6 shrink-0">
+                <component :is="card.icon" class="w-6 h-6 stroke-[1.5]" />
               </div>
 
-              <!-- Timeline Item Card -->
-              <div class="bg-[#FFFFFF]/90 hover:bg-[#FFFFFF] p-5 sm:p-6 rounded-[24px] border border-[#E4DDD3]/80 hover:border-[#B08B57] shadow-subtle hover:shadow-luxury transition-all duration-300 transform group-hover:-translate-y-1">
-                <div class="flex items-center justify-between mb-1.5">
-                  <h3 class="font-editorial text-xl font-bold text-[#2B2B2B] group-hover:text-[#B08B57] transition-colors">
-                    {{ item.title }}
-                  </h3>
-                  <span class="text-[10px] font-mono text-[#E4DDD3] font-bold group-hover:text-[#B08B57] transition-colors">
-                    0{{ idx + 1 }}
-                  </span>
-                </div>
-                <p class="text-xs sm:text-[13px] text-[#666666] leading-relaxed">
-                  {{ item.desc }}
+              <!-- Typography & Short Description -->
+              <div>
+                <h3 class="font-editorial text-lg sm:text-xl font-bold text-[#0F172A] mb-2 group-hover:text-[#1E3A8A] transition-colors">
+                  {{ card.title }}
+                </h3>
+                <p class="text-xs sm:text-sm text-[#475569] leading-relaxed font-normal">
+                  {{ card.desc }}
                 </p>
               </div>
             </div>
           </div>
 
           <!-- Bottom CTA link -->
-          <div class="mt-12 pt-6 border-t border-[#E4DDD3]/70 flex items-center justify-between">
-            <span class="text-xs text-[#666666] uppercase tracking-wider font-medium">
-              Want to inspect our manufacturing tolerances?
+          <div class="mt-12 pt-6 border-t border-[#E2E8F0] flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs text-[#475569] uppercase tracking-wider font-medium">
+              هل تبحث عن مورد موثوق للكتل والألواح بكميات ضخمة؟
             </span>
             <a 
               href="#sample-box"
-              class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#B08B57] hover:text-[#9A774A] transition-colors group"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1E3A8A] text-[#FFFFFF] text-xs font-semibold uppercase tracking-[0.14em] shadow-sm hover:bg-[#3B82F6] transition-all duration-300 group hover:scale-105"
             >
-              <span>Download Technical Spec Binder</span>
-              <ArrowUpRight class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <span>طلب مواصفات وكتالوج المحاجر</span>
+              <ArrowUpRight class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 rtl:scale-x-[-1]" />
             </a>
           </div>
 

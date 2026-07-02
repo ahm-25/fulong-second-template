@@ -14,12 +14,12 @@ import PremiumCTA from './components/PremiumCTA.vue'
 import Footer from './components/Footer.vue'
 
 onMounted(() => {
-  console.log('Atelier Sinai — Warm Minimal Luxury Egyptian Stone initialized.')
+  console.log('Fulong Egypt — B2B Marble & Granite Quarry Exporter initialized.')
 })
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#F4F1EA] text-[#2B2B2B] font-sans selection:bg-[#B08B57] selection:text-white">
+  <div class="min-h-screen bg-[#F8FAFC] text-[#0F172A] font-sans selection:bg-[#1E3A8A] selection:text-white">
     <Header />
     
     <main>
